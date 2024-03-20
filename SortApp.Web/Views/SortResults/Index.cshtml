@@ -1,0 +1,46 @@
+﻿@model IEnumerable<SortApp.Web.Models.SortResult>
+
+@{
+    ViewData["Title"] = "Sort List";
+}
+<p>
+    <a asp-action="Create">Create</a>
+    <a asp-action="ExportToJson">Export</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Numbers)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeTaken)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Numbers)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Order)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TimeTaken)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
